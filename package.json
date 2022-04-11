@@ -2,6 +2,11 @@
   "name": "social-service",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "MohammadReza Zare",
+    "email": "MohammadReza.zr@yahoo.com",
+    "url": "https://m-zare.ir"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
