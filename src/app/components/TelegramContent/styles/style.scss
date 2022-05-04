@@ -1,0 +1,121 @@
+@mixin center {
+  display: flex;
+  align-items: center;
+}
+
+.telegram {
+  --background-blue: #02045e;
+  --text-white: white;
+  margin-top: -0.5rem;
+  width: 100%;
+  direction: rtl;
+
+  .telegram__container {
+    @include center();
+    flex-direction: column;
+    width: 100%;
+    font-weight: 700;
+
+    .telegram__container_header {
+      @include center();
+      justify-content: center;
+      background-color: var(--background-blue);
+      color: var(--text-white);
+      width: 100%;
+      padding: 0.7rem;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+
+      .telegram__container_header_item {
+        width: 30%;
+        text-align: center;
+      }
+    }
+
+    .telegram__container_body {
+      @include center();
+      flex-direction: column;
+      width: 100%;
+
+      .telegram__container_body_items {
+        @include center();
+        justify-content: center;
+        width: 100%;
+        padding: 0.7rem;
+        background-color: #91e0ef;
+        color: var(--background-blue);
+
+        &:nth-child(odd) {
+          background-color: #caf1f8;
+        }
+
+        .telegram__container_body_items_item {
+          @include center();
+          justify-content: center;
+          width: 30%;
+
+          .telegram__container_body_items_item_checkbox {
+            width: 16px;
+            height: 16px;
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: #0078b7;
+            border: 1px solid #cacece;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+            padding: 0.7rem;
+            border-radius: 7px;
+            display: inline-block;
+            position: relative;
+            margin-left: 0.5rem;
+            cursor: pointer;
+
+            &:checked {
+              background-color: var(--background-blue);
+
+              &:after {
+                content: "\2714";
+                font-size: 14px;
+                position: absolute;
+                top: 0.2rem;
+                left: 0.35rem;
+                color: var(--text-white);
+              }
+            }
+          }
+
+          .telegram__container_body_items_item_phone {
+            direction: ltr;
+          }
+        }
+      }
+
+      .telegram__container_body_action {
+        @include center();
+        justify-content: center;
+        position: sticky;
+        bottom: 4%;
+        width: 100%;
+        margin-top: 1.5rem;
+
+        .telegram__container_body_action_buy {
+          font-weight: bold;
+          font-size: 24px;
+          padding: 0.3rem 2rem;
+          background-color: green;
+          border: 2px solid black;
+          margin-left: 20%;
+        }
+
+        .telegram__container_body_action_addToCart {
+          margin-left: 20%;
+
+          .telegram__container_body_action_addToCart_image {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

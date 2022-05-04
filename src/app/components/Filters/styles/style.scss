@@ -1,0 +1,183 @@
+.filters {
+  margin-top: -0.6%;
+  width: 100%;
+  background: rgb(182, 217, 232);
+  background: linear-gradient(180deg, rgba(182, 217, 232, 1) 0%, rgba(25, 32, 112, 1) 100%);
+  padding: 1rem;
+
+  --lightBlue-background: #cbf2f9;
+  --black-text: black;
+
+  .filters__container {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+
+    .filters__container_search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 30%;
+
+      .filters__container_search_input {
+        background-color: #cbf2f9;
+        outline: none;
+        border: none;
+        border-radius: 15px;
+        padding: 0.3rem 0.5rem 0.3rem 1.6rem;
+        width: 100%;
+      }
+      .filters__container_search_icon {
+        position: absolute;
+        left: 0.2rem;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+    }
+
+    .filters__container_category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 30%;
+
+      .filters__container_category_top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #cbf2f9;
+        border-radius: 15px;
+        padding: 0.3rem;
+        cursor: pointer;
+        z-index: 3;
+        border: 1px solid grey;
+
+        .filters__container_category_top_content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .filters__container_category_top_content_icon {
+            width: 16px;
+            height: 16px;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .filters__container_category_top_listIcon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .filters__container_category_list {
+        visibility: hidden;
+        height: 0;
+        width: 100%;
+        background-color: var(--lightBlue-background);
+        color: var(--black-text);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 1rem;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border: 1px solid grey;
+        z-index: 2;
+
+        .filters__container_category_list_item {
+          padding: 0.5rem;
+          border-bottom: 1px solid grey;
+          user-select: none;
+          cursor: pointer;
+
+          &:first-child {
+            padding: 1.8rem 0.5rem 0.5rem 0.5rem;
+          }
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+
+    .filters__container_sort {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 30%;
+
+      .filters__container_sort_top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #cbf2f9;
+        border-radius: 15px;
+        padding: 0.3rem;
+        cursor: pointer;
+        z-index: 3;
+        border: 1px solid grey;
+
+        .filters__container_sort_top_content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .filters__container_sort_top_content_icon {
+            width: 16px;
+            height: 16px;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .filters__container_sort_top_listIcon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .filters__container_sort_list {
+        visibility: hidden;
+        height: 0;
+        width: 100%;
+        background-color: var(--lightBlue-background);
+        color: var(--black-text);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 1rem;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border: 1px solid grey;
+        z-index: 2;
+
+        .filters__container_sort_list_item {
+          padding: 0.5rem;
+          border-bottom: 1px solid grey;
+          user-select: none;
+          cursor: pointer;
+
+          &:first-child {
+            padding: 1.8rem 0.5rem 0.5rem 0.5rem;
+          }
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
