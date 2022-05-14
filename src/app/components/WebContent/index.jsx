@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { CartContext, pageTypes } from "../../context";
 import { separate } from "../../utils";
 
 import { Images } from "../../assets";
@@ -13,13 +14,23 @@ export const WebContent = () => {
   const [data, setData] = useState(dat);
   const [selected, setSelected] = useState([]);
 
+  const { setCartData } = useContext(CartContext);
+
   const handleChange = (id) => {
     const isSelected = selected.find((item) => id === item);
     if (isSelected) {
       const filtered = selected.filter((item) => item !== id);
       setSelected(filtered);
+      setCartData({
+        type: pageTypes.WEBSITE,
+        ids: filtered,
+      });
     } else {
       setSelected([...selected, id]);
+      setCartData({
+        type: pageTypes.WEBSITE,
+        ids: [...selected, id],
+      });
     }
   };
 
@@ -60,7 +71,17 @@ export const WebContent = () => {
             <Link to={"/#"} className="webContent__container_body_action_addToCart">
               <img src={Images.Filter} alt="" className="webContent__container_body_action_addToCart_image" />
             </Link>
-            <Link to={`/payment`} className="webContent__container_body_action_buy">
+            <Link
+              onClick={(e) => {
+                if (selected.length === 0) {
+                  e.preventDefault();
+                  alert("شما هیچ گزینه ای انتخاب نکردید!");
+                  return false;
+                }
+              }}
+              to={`/payment`}
+              className="webContent__container_body_action_buy"
+            >
               خرید
             </Link>
           </div>

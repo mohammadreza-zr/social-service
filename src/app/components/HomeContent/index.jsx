@@ -40,14 +40,6 @@ export const HomeContent = () => {
         </div>
         <div className="home-content__container_item">
           <div className="home-content__container_item_image">
-            <img src={Images.Blog} alt="" className="home-content__container_item_image-img" />
-          </div>
-          <Link to="/#">
-            <div className="home-content__container_item_text">بلاگر</div>
-          </Link>
-        </div>
-        <div className="home-content__container_item">
-          <div className="home-content__container_item_image">
             <img src={Images.Website} alt="" className="home-content__container_item_image-img" />
           </div>
           <Link to="/web">
@@ -60,22 +52,6 @@ export const HomeContent = () => {
           </div>
           <Link to="/whatsapp">
             <div className="home-content__container_item_text">واتساپ</div>
-          </Link>
-        </div>
-        <div className="home-content__container_item">
-          <div className="home-content__container_item_image">
-            <img src={Images.Website} alt="" className="home-content__container_item_image-img" />
-          </div>
-          <Link to="/#">
-            <div className="home-content__container_item_text">اپلیکیشن</div>
-          </Link>
-        </div>
-        <div className="home-content__container_item">
-          <div className="home-content__container_item_image">
-            <img src={Images.Website} alt="" className="home-content__container_item_image-img" />
-          </div>
-          <Link to="/#">
-            <div className="home-content__container_item_text">اینفلونسر</div>
           </Link>
         </div>
       </div>

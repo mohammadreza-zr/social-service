@@ -263,4 +263,10 @@
 .filters .filters__container .filters__container_sort .filters__container_sort_list .filters__container_sort_list_item:last-child {
   border: none;
 }
+
+@media screen and (max-width: 600px) {
+  .filters {
+    font-size: 14px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
