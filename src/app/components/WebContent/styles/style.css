@@ -91,6 +91,11 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 30%;
+  overflow: auto;
+}
+
+.webContent .webContent__container .webContent__container_body .webContent__container_body_items .webContent__container_body_items_item:first-child {
+  width: 40%;
 }
 
 .webContent .webContent__container .webContent__container_body .webContent__container_body_items .webContent__container_body_items_item .webContent__container_body_items_item_checkbox {
@@ -147,16 +152,44 @@
   padding: 0.3rem 2rem;
   background-color: green;
   border: 2px solid black;
-  margin-left: 20%;
 }
 
-.webContent .webContent__container .webContent__container_body .webContent__container_body_action .webContent__container_body_action_addToCart {
-  margin-left: 20%;
+.webContent .webContent__container .webContent__container_body .webContent__container_body_action .webContent__container_body_action_link {
+  position: relative;
 }
 
-.webContent .webContent__container .webContent__container_body .webContent__container_body_action .webContent__container_body_action_addToCart .webContent__container_body_action_addToCart_image {
+.webContent .webContent__container .webContent__container_body .webContent__container_body_action .webContent__container_body_action_link .webContent__container_body_action_addToCart {
+  position: absolute;
+  right: -5rem;
+  top: 0;
+}
+
+.webContent .webContent__container .webContent__container_body .webContent__container_body_action .webContent__container_body_action_link .webContent__container_body_action_addToCart .webContent__container_body_action_addToCart_image {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.webContent .webContent__container_body_load {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.webContent .webContent__container_body_load .webContent__container_body_load_btn {
+  padding: 1rem 2rem;
+  background-color: var(--background-blue);
+  color: var(--text-white);
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,37 +1,100 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Images } from "../../assets";
-import { CartContext, pageTypes } from "../../context";
 
+import { CartContext, pageTypes } from "../../context";
 import { separate } from "../../utils";
+import { PostRequest } from "../../services";
+
+import { Images } from "../../assets";
 
 import "./styles/style.css";
 
-const dat = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-
-export const TelegramContent = () => {
-  const [data, setData] = useState(dat);
-  const [selected, setSelected] = useState([]);
-
+let allPrice = 0;
+let first = false;
+export const TelegramContent = ({ categoryId, sortField, searchValue }) => {
   const { setCartData } = useContext(CartContext);
 
-  const handleChange = (id) => {
+  const [data, setData] = useState([]);
+  const [selected, setSelected] = useState([]);
+  const [page, setPage] = useState(25);
+  const [theLastPrice, setTheLastPrice] = useState(0);
+
+  if (theLastPrice !== allPrice) {
+    allPrice = 0;
+  }
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const res = await PostRequest("telegram", {
+          limit: 25,
+          limitAsInt: 25,
+          offset: 0,
+          offsetAsInt: 0,
+        });
+        if (res.status === 200) {
+          setData(res.data);
+        }
+      } catch (err) {}
+    }
+    fetchData();
+
+    return () => {};
+  }, []);
+
+  const loadMore = () => {
+    setPage(page + 25);
+  };
+
+  const handleChange = (id, price) => {
     const isSelected = selected.find((item) => id === item);
     if (isSelected) {
       const filtered = selected.filter((item) => item !== id);
+      allPrice -= price;
+      setTheLastPrice(allPrice);
       setSelected(filtered);
       setCartData({
         type: pageTypes.TELEGRAM,
         ids: filtered,
+        price: allPrice,
       });
     } else {
+      allPrice += price;
       setSelected([...selected, id]);
       setCartData({
         type: pageTypes.TELEGRAM,
         ids: [...selected, id],
+        price: allPrice,
       });
     }
   };
+
+  useEffect(() => {
+    const filterData = async () => {
+      try {
+        let sortFieldToSend = sortField;
+        if (sortField === "null") {
+          sortFieldToSend = null;
+        }
+        const res = await PostRequest("telegram/search", {
+          filter: sortFieldToSend,
+          label: +categoryId,
+          limit: page,
+          limitAsInt: 25,
+          offset: 0,
+          offsetAsInt: 0,
+          searchText: searchValue ? (searchValue.length > 0 ? searchValue : null) : null,
+        });
+        if (res.status === 200) {
+          setData(res.data);
+        }
+      } catch (err) {}
+    };
+    if (first) {
+      filterData();
+    }
+    first = true;
+  }, [searchValue, categoryId, sortField, page]);
 
   return (
     <div className="telegram">
@@ -44,45 +107,60 @@ export const TelegramContent = () => {
           <div className="telegram__container_header_item">آیدی</div>
         </div>
         <div className="telegram__container_body">
-          {data.map((item) => {
-            return (
-              <div className="telegram__container_body_items" key={item}>
-                <div className="telegram__container_body_items_item">
-                  <input
-                    onChange={() => {
-                      handleChange(item);
-                    }}
-                    type="checkbox"
-                    className="telegram__container_body_items_item_checkbox"
-                  />
-                  <span className="telegram__container_body_items_item_number">{separate(20000)}</span>
+          {data &&
+            data.map((item) => {
+              return (
+                <div className="telegram__container_body_items" key={item.id}>
+                  <div className="telegram__container_body_items_item">
+                    <input
+                      onChange={() => {
+                        handleChange(item.id, item.price);
+                      }}
+                      type="checkbox"
+                      className="telegram__container_body_items_item_checkbox"
+                    />
+                    <span className="telegram__container_body_items_item_number">{separate(item.price)}</span>
+                  </div>
+                  <div className="telegram__container_body_items_item">{item.view}K</div>
+                  <div className="telegram__container_body_items_item">{item.member}K</div>
+                  <div className="telegram__container_body_items_item">{item.chanelName}</div>
+                  <div className="telegram__container_body_items_item">
+                    <span className="telegram__container_body_items_item_phone">@{item.chanelId}</span>
+                  </div>
                 </div>
-                <div className="telegram__container_body_items_item">24K</div>
-                <div className="telegram__container_body_items_item">20K</div>
-                <div className="telegram__container_body_items_item">فروشگاه لباس ما</div>
-                <div className="telegram__container_body_items_item">
-                  <span className="telegram__container_body_items_item_phone">@our_shopping</span>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          {page <= data.length && (
+            <div className="telegram__container_body_load">
+              <button onClick={loadMore} className="telegram__container_body_load_btn">
+                بیشتر
+              </button>
+            </div>
+          )}
+
           <div className="telegram__container_body_action">
-            <Link to={"/#"} className="telegram__container_body_action_addToCart">
-              <img src={Images.Filter} alt="" className="telegram__container_body_action_addToCart_image" />
-            </Link>
-            <Link
-              onClick={(e) => {
-                if (selected.length === 0) {
-                  e.preventDefault();
-                  alert("شما هیچ گزینه ای انتخاب نکردید!");
-                  return false;
-                }
-              }}
-              to={`/payment`}
-              className="telegram__container_body_action_buy"
-            >
-              خرید
-            </Link>
+            <div className="telegram__container_body_action_link">
+              <Link to={"/#"} className="telegram__container_body_action_addToCart">
+                <img src={Images.Filter} alt="" className="telegram__container_body_action_addToCart_image" />
+              </Link>
+            </div>
+            {selected.length > 0 ? (
+              <Link
+                onClick={(e) => {
+                  if (selected.length === 0) {
+                    e.preventDefault();
+                    alert("شما هیچ گزینه ای انتخاب نکردید!");
+                    return false;
+                  }
+                }}
+                to={`/payment`}
+                className="telegram__container_body_action_buy"
+              >
+                خرید
+              </Link>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

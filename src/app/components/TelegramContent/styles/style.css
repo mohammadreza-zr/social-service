@@ -151,16 +151,44 @@
   padding: 0.3rem 2rem;
   background-color: green;
   border: 2px solid black;
-  margin-left: 20%;
 }
 
-.telegram .telegram__container .telegram__container_body .telegram__container_body_action .telegram__container_body_action_addToCart {
-  margin-left: 20%;
+.telegram .telegram__container .telegram__container_body .telegram__container_body_action .telegram__container_body_action_link {
+  position: relative;
 }
 
-.telegram .telegram__container .telegram__container_body .telegram__container_body_action .telegram__container_body_action_addToCart .telegram__container_body_action_addToCart_image {
+.telegram .telegram__container .telegram__container_body .telegram__container_body_action .telegram__container_body_action_link .telegram__container_body_action_addToCart {
+  position: absolute;
+  right: -5rem;
+  top: 0;
+}
+
+.telegram .telegram__container .telegram__container_body .telegram__container_body_action .telegram__container_body_action_link .telegram__container_body_action_addToCart .telegram__container_body_action_addToCart_image {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.telegram .telegram__container_body_load {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.telegram .telegram__container_body_load .telegram__container_body_load_btn {
+  padding: 1rem 2rem;
+  background-color: var(--background-blue);
+  color: var(--text-white);
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

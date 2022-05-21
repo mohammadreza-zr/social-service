@@ -1,6 +1,39 @@
-.header{
-    .header__img{
-        width: 100%;
-        height: auto;
+.header {
+  position: relative;
+
+  .header__title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: right;
+
+    .header__title_h1 {
+      color: red;
+      width: 80%;
+      margin-right: 10%;
+      text-shadow: rgb(3, 5, 6) 1px 0px 0px, rgb(3, 5, 6) 0.540302px 0.841471px 0px,
+        rgb(3, 5, 6) -0.416147px 0.909297px 0px, rgb(3, 5, 6) -0.989992px 0.14112px 0px,
+        rgb(3, 5, 6) -0.653644px -0.756802px 0px, rgb(3, 5, 6) 0.283662px -0.958924px 0px,
+        rgb(3, 5, 6) 0.96017px -0.279415px 0px;
     }
+  }
+
+  .header__img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__title_h1 {
+    font-size: 20px;
+    text-shadow: rgb(3, 5, 6) 1px 0px 0px, rgb(3, 5, 6) 0.540302px 0.841471px 0px,
+      rgb(3, 5, 6) -0.416147px 0.909297px 0px, rgb(3, 5, 6) -0.989992px 0.14112px 0px,
+      rgb(3, 5, 6) -0.653644px -0.756802px 0px, rgb(3, 5, 6) 0.283662px -0.958924px 0px,
+      rgb(3, 5, 6) 0.96017px -0.279415px 0px;
+  }
 }

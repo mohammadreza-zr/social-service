@@ -104,18 +104,40 @@
           padding: 0.3rem 2rem;
           background-color: green;
           border: 2px solid black;
-          margin-left: 20%;
         }
 
-        .telegram__container_body_action_addToCart {
-          margin-left: 20%;
+        .telegram__container_body_action_link {
+          position: relative;
 
-          .telegram__container_body_action_addToCart_image {
-            width: 2.5rem;
-            height: 2.5rem;
+          .telegram__container_body_action_addToCart {
+            position: absolute;
+            right: -5rem;
+            top: 0;
+
+            .telegram__container_body_action_addToCart_image {
+              width: 2.5rem;
+              height: 2.5rem;
+            }
           }
         }
       }
+    }
+  }
+
+  .telegram__container_body_load {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .telegram__container_body_load_btn {
+      padding: 1rem 2rem;
+      background-color: var(--background-blue);
+      color: var(--text-white);
+      border: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
     }
   }
 }

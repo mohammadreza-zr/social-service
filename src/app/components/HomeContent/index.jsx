@@ -20,6 +20,9 @@ export const HomeContent = () => {
         <Link to="/#" className="home-content__container_link">
           درباره ما
         </Link>
+        <Link to="/contact" className="home-content__container_link">
+          تماس با ما
+        </Link>
       </div>
       <div className="home-content__container">
         <div className="home-content__container_item">

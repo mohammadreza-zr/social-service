@@ -1,4 +1,4 @@
-import HeaderImage from "./header.png";
+import HeaderImage from "./header.jpg";
 import Arrow from "./arrow.svg";
 import PageIcon from "./pageicon.svg";
 import Filter from "./filter.svg";
@@ -12,6 +12,11 @@ import Blog from "./blog.svg";
 
 import Accept from "./accept.svg";
 import Reject from "./reject.svg";
+
+import ContactInstagram from "./contact_instagram.svg";
+import ContactTelegram from "./contact_telegram.svg";
+import ContactWhatsapp from "./contact_whatsapp.svg";
+import ContactPhone from "./contact_phone.png";
 
 export const Images = {
   HeaderImage: HeaderImage,
@@ -28,4 +33,9 @@ export const Images = {
 
   Accept: Accept,
   Reject: Reject,
+
+  ContactInstagram: ContactInstagram,
+  ContactTelegram: ContactTelegram,
+  ContactWhatsapp: ContactWhatsapp,
+  ContactPhone: ContactPhone,
 };

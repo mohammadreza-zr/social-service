@@ -1,0 +1,35 @@
+.contact {
+  background-image: url("../../../assets/images/background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  .contact__container {
+    width: 100%;
+    max-width: 1080px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .contact__container_content_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+
+      .contact__container_content_item_image {
+        width: 2rem;
+      }
+    }
+  }
+}

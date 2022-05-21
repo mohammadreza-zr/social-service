@@ -7,3 +7,4 @@ export * from "./WhatsappContent";
 export * from "./InstagramContent";
 export * from "./TelegramContent";
 export * from "./Payment";
+export * from "./ContactUsContent";
