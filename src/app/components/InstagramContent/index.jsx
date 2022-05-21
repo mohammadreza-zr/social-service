@@ -187,8 +187,8 @@ export const InstagramContent = ({ categoryId, sortField, searchValue }) => {
 
           <div className="instagram__container_body_action">
             <div className="instagram__container_body_action_link">
-              <Link to={"/#"} className="instagram__container_body_action_addToCart">
-                <img src={Images.Filter} alt="" className="instagram__container_body_action_addToCart_image" />
+              <Link to={"/contact"} className="instagram__container_body_action_addToCart">
+                <img src={Images.AddAccount} alt="" className="instagram__container_body_action_addToCart_image" />
               </Link>
             </div>
             {storySelected.length > 0 || postSelected.length > 0 ? (

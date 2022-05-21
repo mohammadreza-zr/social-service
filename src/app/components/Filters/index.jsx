@@ -140,7 +140,7 @@ export const Filters = ({ setCategoryId, setSortField, setSearchValue }) => {
               categoryItems.map((item) => {
                 return (
                   <span
-                    id={item?.id + 1}
+                    id={item?.id}
                     key={item?.id}
                     onClick={handleSetCategory}
                     className="filters__container_category_list_item"

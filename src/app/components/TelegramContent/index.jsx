@@ -140,8 +140,8 @@ export const TelegramContent = ({ categoryId, sortField, searchValue }) => {
 
           <div className="telegram__container_body_action">
             <div className="telegram__container_body_action_link">
-              <Link to={"/#"} className="telegram__container_body_action_addToCart">
-                <img src={Images.Filter} alt="" className="telegram__container_body_action_addToCart_image" />
+              <Link to={"/contact"} className="telegram__container_body_action_addToCart">
+                <img src={Images.AddAccount} alt="" className="telegram__container_body_action_addToCart_image" />
               </Link>
             </div>
             {selected.length > 0 ? (

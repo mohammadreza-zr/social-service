@@ -159,8 +159,8 @@
 
 .whatsapp .whatsapp__container .whatsapp__container_body .whatsapp__container_body_action .whatsapp__container_body_action_link .whatsapp__container_body_action_addToCart {
   position: absolute;
-  right: -5rem;
-  top: 0;
+  right: -7rem;
+  top: -1rem;
 }
 
 .whatsapp .whatsapp__container .whatsapp__container_body .whatsapp__container_body_action .whatsapp__container_body_action_link .whatsapp__container_body_action_addToCart .whatsapp__container_body_action_addToCart_image {
@@ -197,10 +197,6 @@
   }
   .whatsapp__container_body_action_buy {
     font-size: 14px !important;
-  }
-  .whatsapp__container_body_action_addToCart_image {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
   }
   .whatsapp__container_body_items_item_icon {
     width: 0.9rem !important;

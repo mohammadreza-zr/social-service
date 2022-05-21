@@ -159,8 +159,8 @@
 
 .telegram .telegram__container .telegram__container_body .telegram__container_body_action .telegram__container_body_action_link .telegram__container_body_action_addToCart {
   position: absolute;
-  right: -5rem;
-  top: 0;
+  right: -7rem;
+  top: -1rem;
 }
 
 .telegram .telegram__container .telegram__container_body .telegram__container_body_action .telegram__container_body_action_link .telegram__container_body_action_addToCart .telegram__container_body_action_addToCart_image {
@@ -197,10 +197,6 @@
   }
   .telegram__container_body_action_buy {
     font-size: 14px !important;
-  }
-  .telegram__container_body_action_addToCart_image {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
   }
   .telegram__container_body_items_item_icon {
     width: 0.9rem !important;

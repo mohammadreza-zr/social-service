@@ -160,8 +160,8 @@
 
 .webContent .webContent__container .webContent__container_body .webContent__container_body_action .webContent__container_body_action_link .webContent__container_body_action_addToCart {
   position: absolute;
-  right: -5rem;
-  top: 0;
+  right: -7rem;
+  top: -1rem;
 }
 
 .webContent .webContent__container .webContent__container_body .webContent__container_body_action .webContent__container_body_action_link .webContent__container_body_action_addToCart .webContent__container_body_action_addToCart_image {
@@ -198,10 +198,6 @@
   }
   .webContent__container_body_action_buy {
     font-size: 14px !important;
-  }
-  .webContent__container_body_action_addToCart_image {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
   }
   .webContent__container_body_items_item_icon {
     width: 0.9rem !important;

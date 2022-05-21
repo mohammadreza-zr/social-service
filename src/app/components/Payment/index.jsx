@@ -1,4 +1,5 @@
 import { useEffect, useContext, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
@@ -6,10 +7,9 @@ import persian_fa from "react-date-object/locales/persian_fa";
 
 import { CartContext } from "../../context";
 import { PostRequest } from "../../services";
+import { separate } from "../../utils";
 
 import "./styles/style.css";
-import { useNavigate } from "react-router-dom";
-import { separate } from "../../utils";
 
 export const Payment = () => {
   const [value, setValue] = useState("");

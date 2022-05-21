@@ -141,8 +141,8 @@ export const WebContent = ({ categoryId, sortField, searchValue }) => {
 
           <div className="webContent__container_body_action">
             <div className="webContent__container_body_action_link">
-              <Link to={"/#"} className="webContent__container_body_action_addToCart">
-                <img src={Images.Filter} alt="" className="webContent__container_body_action_addToCart_image" />
+              <Link to={"/contact"} className="webContent__container_body_action_addToCart">
+                <img src={Images.AddAccount} alt="" className="webContent__container_body_action_addToCart_image" />
               </Link>
             </div>
             {selected.length > 0 ? (

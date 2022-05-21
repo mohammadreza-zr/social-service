@@ -150,8 +150,8 @@ export const WhatsappContent = ({ categoryId, sortField, searchValue }) => {
 
           <div className="whatsapp__container_body_action">
             <div className="whatsapp__container_body_action_link">
-              <Link to={"/#"} className="whatsapp__container_body_action_addToCart">
-                <img src={Images.Filter} alt="" className="whatsapp__container_body_action_addToCart_image" />
+              <Link to={"/contact"} className="whatsapp__container_body_action_addToCart">
+                <img src={Images.AddAccount} alt="" className="whatsapp__container_body_action_addToCart_image" />
               </Link>
             </div>
             {selected.length > 0 ? (

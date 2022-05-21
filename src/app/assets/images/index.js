@@ -18,6 +18,8 @@ import ContactTelegram from "./contact_telegram.svg";
 import ContactWhatsapp from "./contact_whatsapp.svg";
 import ContactPhone from "./contact_phone.png";
 
+import AddAccount from "./addAcount.png";
+
 export const Images = {
   HeaderImage: HeaderImage,
   Arrow: Arrow,
@@ -38,4 +40,6 @@ export const Images = {
   ContactTelegram: ContactTelegram,
   ContactWhatsapp: ContactWhatsapp,
   ContactPhone: ContactPhone,
+
+  AddAccount: AddAccount,
 };
