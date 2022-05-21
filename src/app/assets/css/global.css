@@ -1,7 +1,14 @@
-*{
-    box-sizing: border-box;
+:root {
+  font-family: BHome, sans-serif;
 }
-a{
-    text-decoration: none;
-    color: unset;
+@font-face {
+  font-family: BHome;
+  src: url("../fonts/BHoma.ttf");
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: unset;
 }
