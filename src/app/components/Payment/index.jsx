@@ -10,6 +10,7 @@ import { PostRequest } from "../../services";
 import { separate } from "../../utils";
 
 import "./styles/style.css";
+import { Images } from "../../assets/images";
 
 export const Payment = () => {
   const [value, setValue] = useState("");
@@ -18,6 +19,8 @@ export const Payment = () => {
   const [connection, setConnection] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("THREE");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const labelDiv = useRef();
   const fileInput = useRef();
@@ -41,6 +44,12 @@ export const Payment = () => {
 
   const handleSubmit = async () => {
     try {
+      if (!fileInput.current.files[0]) {
+        return setError("لطفا فایل را انتخاب کنید");
+      }
+
+      setLoading(true);
+
       let selectedStories = cartData?.ids?.story,
         posts,
         story,
@@ -106,9 +115,15 @@ export const Payment = () => {
         });
         if (res2.data.status === "success") {
           window.location.href = res2.data.callback;
+        } else {
+          setError("مشکلی پیش آمد");
         }
+      } else {
+        setError("مشکلی پیش آمد");
       }
-    } catch (err) {}
+    } catch (err) {
+      setError("مشکلی پیش آمد");
+    }
   };
 
   return (
@@ -202,9 +217,14 @@ export const Payment = () => {
         </form>
         <div className="payment__container_submit">
           <p>مبلغ کل سفارشات شما {separate(cartData?.price)} تومان میباشد</p>
-          <button onClick={handleSubmit} className="payment__container_submit_btn">
-            پرداخت
-          </button>
+          <p className="payment__container_submit_error">{error}</p>
+          {loading ? (
+            <img src={Images.Loading} alt="" className="payment__container_submit_loading" />
+          ) : (
+            <button onClick={handleSubmit} className="payment__container_submit_btn">
+              پرداخت
+            </button>
+          )}
         </div>
       </div>
     </div>

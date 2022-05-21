@@ -14,7 +14,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 1rem;
 }
 
 .contact .contact__container {
@@ -35,6 +34,12 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+  font-size: 24px;
+  padding: 1rem;
+}
+
+.contact .contact__container .contact__container_title {
+  font-size: 28px;
 }
 
 .contact .contact__container .contact__container_content_item {
@@ -57,5 +62,11 @@
 .contact .contact__container .contact__container_content_item .contact__container_content_item_image {
   width: 2rem;
   margin-bottom: 0.3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .contact__container {
+    font-size: 20px !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

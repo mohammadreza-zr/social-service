@@ -19,6 +19,7 @@ import ContactWhatsapp from "./contact_whatsapp.svg";
 import ContactPhone from "./contact_phone.png";
 
 import AddAccount from "./addAcount.png";
+import Loading from "./loading.svg";
 
 export const Images = {
   HeaderImage: HeaderImage,
@@ -42,4 +43,5 @@ export const Images = {
   ContactPhone: ContactPhone,
 
   AddAccount: AddAccount,
+  Loading: Loading,
 };

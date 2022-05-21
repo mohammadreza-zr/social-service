@@ -6,7 +6,9 @@ export const ContactUsContent = () => {
   return (
     <div className="contact">
       <div className="contact__container">
-        <p>برای ارتباط با ما و یا اضافه کردن حساب های خود, در شبکه های زیر با ما در ارتباط باشید</p>
+        <h1 className="contact__container_title">
+          برای ارتباط با ما و یا اضافه کردن حساب های خود, در شبکه های زیر با ما در ارتباط باشید
+        </h1>
         <div className="contact__container_content">
           <div className="contact__container_content_item">
             <img src={Images.ContactInstagram} alt="" className="contact__container_content_item_image" />
