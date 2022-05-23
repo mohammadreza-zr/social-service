@@ -173,7 +173,7 @@ export const InstagramContent = ({ categoryId, sortField, searchValue }) => {
                 <div className="instagram__container_body_items_item">{item.like}K</div>
                 <div className="instagram__container_body_items_item">{item.follow}K</div>
                 <div className="instagram__container_body_items_item">
-                  <span className="instagram__container_body_items_item_phone">{item.username}</span>
+                  <span className="instagram__container_body_items_item_phone">@{item.username}</span>
                 </div>
               </div>
             ))}

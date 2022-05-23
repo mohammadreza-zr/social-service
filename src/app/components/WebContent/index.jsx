@@ -125,7 +125,7 @@ export const WebContent = ({ categoryId, sortField, searchValue }) => {
                   <div className="webContent__container_body_items_item">{item.view}</div>
                   <div className="webContent__container_body_items_item">{item.issue}</div>
                   <div className="webContent__container_body_items_item">
-                    <span>{item.address}</span>
+                    <span className="webContent__container_body_items_item_address">{item.address}</span>
                   </div>
                 </div>
               );

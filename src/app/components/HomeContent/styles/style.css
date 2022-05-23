@@ -43,6 +43,7 @@
       grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 12px;
+  justify-items: center;
 }
 
 .home-content .home-content__container .home-content__container_item {

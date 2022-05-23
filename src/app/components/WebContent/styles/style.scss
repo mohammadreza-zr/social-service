@@ -53,11 +53,10 @@
         .webContent__container_body_items_item {
           @include center();
           justify-content: center;
-          width: 30%;
-          overflow: auto;
+          width: calc(100% / 5);
 
-          &:first-child {
-            width: 40%;
+          &:last-child {
+            justify-content: flex-end;
           }
 
           .webContent__container_body_items_item_checkbox {
@@ -87,6 +86,14 @@
                 color: var(--text-white);
               }
             }
+          }
+          .webContent__container_body_items_item_address {
+            direction: ltr;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: start;
           }
         }
       }

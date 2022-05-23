@@ -90,7 +90,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 30%;
+  width: calc(100% / 5);
 }
 
 .whatsapp .whatsapp__container .whatsapp__container_body .whatsapp__container_body_items .whatsapp__container_body_items_item .whatsapp__container_body_items_item_checkbox {

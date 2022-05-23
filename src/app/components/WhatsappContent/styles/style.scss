@@ -53,7 +53,7 @@
         .whatsapp__container_body_items_item {
           @include center();
           justify-content: center;
-          width: 30%;
+          width: calc(100% / 5);
 
           .whatsapp__container_body_items_item_checkbox {
             width: 16px;

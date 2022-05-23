@@ -90,7 +90,14 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 30%;
+  width: calc(100% / 5);
+  text-align: center;
+}
+
+.telegram .telegram__container .telegram__container_body .telegram__container_body_items .telegram__container_body_items_item:last-child {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .telegram .telegram__container .telegram__container_body .telegram__container_body_items .telegram__container_body_items_item .telegram__container_body_items_item_checkbox {
@@ -124,8 +131,17 @@
   color: var(--text-white);
 }
 
+.telegram .telegram__container .telegram__container_body .telegram__container_body_items .telegram__container_body_items_item .telegram__container_body_items_item_icon {
+  width: 24px;
+}
+
 .telegram .telegram__container .telegram__container_body .telegram__container_body_items .telegram__container_body_items_item .telegram__container_body_items_item_phone {
   direction: ltr;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: start;
 }
 
 .telegram .telegram__container .telegram__container_body .telegram__container_body_action {
@@ -168,7 +184,7 @@
   height: 2.5rem;
 }
 
-.telegram .telegram__container_body_load {
+.telegram .telegram__container .telegram__container_body_load {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,7 +196,7 @@
           justify-content: center;
 }
 
-.telegram .telegram__container_body_load .telegram__container_body_load_btn {
+.telegram .telegram__container .telegram__container_body_load .telegram__container_body_load_btn {
   padding: 1rem 2rem;
   background-color: var(--background-blue);
   color: var(--text-white);
@@ -209,8 +225,10 @@
     left: 2px !important;
   }
   .telegram__container_body_items_item {
-    margin-left: 1%;
-    margin-right: 1%;
+    padding: 0.5rem 0.2rem;
+  }
+  .telegram__container_body_items_item:last-child {
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

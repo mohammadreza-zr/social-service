@@ -129,7 +129,11 @@ export const Payment = () => {
   return (
     <div className="payment">
       <div className="payment__container">
-        <h2 className="payment__container_title">چند خط توضیحات برای زمان خرید</h2>
+        <h2 className="payment__container_title">
+          تبلیغات سایت های شرط بندی و کلیپ های مبتذل و لوازم جنسی پذیرفته نمیشود
+          <br />
+          در صورت تایید نشدن محتوای تبلیغاتی شما مبلغ پرداخت شده باز گردانده میشود
+        </h2>
         <form className="payment__container_form">
           <div className="payment__container_form_right">
             <label htmlFor="caption">* کپشن</label>
@@ -219,7 +223,10 @@ export const Payment = () => {
           <p>مبلغ کل سفارشات شما {separate(cartData?.price)} تومان میباشد</p>
           <p className="payment__container_submit_error">{error}</p>
           {loading ? (
-            <img src={Images.Loading} alt="" className="payment__container_submit_loading" />
+            <>
+              <img src={Images.Loading} alt="" className="payment__container_submit_loading" />
+              <p>در حال اپلود فایل</p>
+            </>
           ) : (
             <button onClick={handleSubmit} className="payment__container_submit_btn">
               پرداخت

@@ -90,12 +90,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 30%;
-  overflow: auto;
+  width: calc(100% / 5);
 }
 
-.webContent .webContent__container .webContent__container_body .webContent__container_body_items .webContent__container_body_items_item:first-child {
-  width: 40%;
+.webContent .webContent__container .webContent__container_body .webContent__container_body_items .webContent__container_body_items_item:last-child {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .webContent .webContent__container .webContent__container_body .webContent__container_body_items .webContent__container_body_items_item .webContent__container_body_items_item_checkbox {
@@ -127,6 +128,15 @@
   top: 0.2rem;
   left: 0.35rem;
   color: var(--text-white);
+}
+
+.webContent .webContent__container .webContent__container_body .webContent__container_body_items .webContent__container_body_items_item .webContent__container_body_items_item_address {
+  direction: ltr;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: start;
 }
 
 .webContent .webContent__container .webContent__container_body .webContent__container_body_action {
