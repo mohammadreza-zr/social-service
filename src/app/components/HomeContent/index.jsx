@@ -25,38 +25,30 @@ export const HomeContent = () => {
         </Link>
       </div>
       <div className="home-content__container">
-        <div className="home-content__container_item">
+        <Link to="/instagram" className="home-content__container_item">
           <div className="home-content__container_item_image">
             <img src={Images.Instagram} alt="" className="home-content__container_item_image-img" />
           </div>
-          <Link to="/instagram">
-            <div className="home-content__container_item_text">اینستاگرام</div>
-          </Link>
-        </div>
-        <div className="home-content__container_item">
+          <div className="home-content__container_item_text">اینستاگرام</div>
+        </Link>
+        <Link to="/telegram" className="home-content__container_item">
           <div className="home-content__container_item_image">
             <img src={Images.Telegram} alt="" className="home-content__container_item_image-img" />
           </div>
-          <Link to="/telegram">
-            <div className="home-content__container_item_text">تلگرام</div>
-          </Link>
-        </div>
-        <div className="home-content__container_item">
+          <div className="home-content__container_item_text">تلگرام</div>
+        </Link>
+        <Link to="/web" className="home-content__container_item">
           <div className="home-content__container_item_image">
             <img src={Images.Website} alt="" className="home-content__container_item_image-img" />
           </div>
-          <Link to="/web">
-            <div className="home-content__container_item_text">وبسایت</div>
-          </Link>
-        </div>
-        <div className="home-content__container_item">
+          <div className="home-content__container_item_text">وبسایت</div>
+        </Link>
+        <Link to="/whatsapp" className="home-content__container_item">
           <div className="home-content__container_item_image">
             <img src={Images.Whatsapp} alt="" className="home-content__container_item_image-img" />
           </div>
-          <Link to="/whatsapp">
-            <div className="home-content__container_item_text">واتساپ</div>
-          </Link>
-        </div>
+          <div className="home-content__container_item_text">واتساپ</div>
+        </Link>
       </div>
     </div>
   );
